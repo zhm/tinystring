@@ -1,6 +1,6 @@
 # tinystring [![Build Status](https://travis-ci.org/zhm/tinystring.svg?branch=master)](https://travis-ci.org/zhm/tinystring)
 
-A tiny wrapper around std::stringstream.
+A tiny wrapper around `std::stringstream`.
 
 ## Installation
 
