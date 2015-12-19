@@ -1,6 +1,6 @@
 {
   "name": "tinystring",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny string builder on top of std::stringstream",
   "homepage": "http://github.com/zhm/tinystring",
   "main": "index.js",

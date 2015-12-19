@@ -9,7 +9,7 @@ public:
   static void Init(v8::Local<v8::Object> exports);
 
 private:
-  explicit TinyString(const char *value);
+  explicit TinyString(std::string value);
 
   ~TinyString();
 

@@ -1,5 +1,5 @@
 var pretty = require('prettysize');
-var TinyString = require('.');
+var TinyString = require('../');
 
 function tinystring() {
   var base = 'This is a test string';

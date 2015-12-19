@@ -2,7 +2,7 @@
 
 Nan::Persistent<v8::Function> TinyString::constructor;
 
-TinyString::TinyString(const char *value) {
+TinyString::TinyString(std::string value) {
   value_ << value;
 }
 
@@ -26,7 +26,7 @@ void TinyString::Init(v8::Local<v8::Object> exports) {
 
 void TinyString::New(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   if (info.IsConstructCall()) {
-    const char *value = info[0]->IsUndefined() ? "" : *Nan::Utf8String(info[0]);
+    std::string value = info[0]->IsUndefined() ? "" : *Nan::Utf8String(info[0]);
     TinyString *obj = new TinyString(value);
     obj->Wrap(info.This());
     info.GetReturnValue().Set(info.This());
@@ -46,7 +46,7 @@ void TinyString::GetValue(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 void TinyString::Append(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   TinyString *obj = ObjectWrap::Unwrap<TinyString>(info.Holder());
 
-  const char *value = info[0]->IsUndefined() ? "" : *Nan::Utf8String(info[0]);
+  std::string value = *Nan::Utf8String(info[0]);
 
   obj->value_ << value;
 
