@@ -8,6 +8,21 @@ A tiny wrapper around std::stringstream.
 npm install tinystring
 ```
 
+## Example
+
+```js
+var TinyString = require('tinystring');
+
+var str = new TinyString();
+
+str.append('one');
+str.append('two');
+str.append('three');
+
+console.log(str.value());
+// onetwothree
+```
+
 ## Performance
 
 The goal is to minimize the memory usage when building up huge strings. In most cases using a stream is a better design, but this is for cases where that might not be possible.
